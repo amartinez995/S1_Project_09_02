@@ -13,3 +13,29 @@
 
 
 /* Validation Styles */
+input:not([type='radio']):focus {
+    background-color: rgb(255, 218, 165);
+    -moz-background-color: rgb(255, 218, 165);
+    -ms-background-color: rgb(255, 218, 165);
+    -webkit-background-color: rgb(255, 218, 165);
+}
+
+/* The above piece of code changes the background color of all input elements not matching the "radio" type to umm... 255, 218, 165 when it has the focus, as well as adds cross-browser support so that it works with all major browsers. */
+
+input:not([type='radio']):focus:valid {
+    background: rgb(215, 255, 215) url(sb_valid.png) right/contain no-repeat;
+    -moz-background: rgb(215, 255, 215) url(sb_valid.png) right/contain no-repeat;
+    -ms-background: rgb(215, 255, 215) url(sb_valid.png) right/contain no-repeat;
+    -webkit-background: rgb(215, 255, 215) url(sb_valid.png) right/contain no-repeat;
+}
+
+/* The above piece of code changes the background color of all input elements not matching the "radio" type to green and adds a background image resembling a checkmark when it has the focus and is valid, as well as adds cross-browser support so that it works with all major browsers. */
+
+input:not([type='radio']):focus:invalid {
+    background: rgb(255, 245, 215) url(sb_invalid.png) right/contain no-repeat;
+    -moz-background: rgb(255, 245, 215) url(sb_invalid.png) right/contain no-repeat;
+    -ms-background: rgb(255, 245, 215) url(sb_invalid.png) right/contain no-repeat;
+    -webkit-background: rgb(255, 245, 215) url(sb_invalid.png) right/contain no-repeat;
+}
+
+/* The above piece of code changes the background color of all input elements not matching the "radio" type to red and adds a background image resembling a "X" when it has the focus and is invalid, as well as adds cross-browser support so that it works with all major browsers. */

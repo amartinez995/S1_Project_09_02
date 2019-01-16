@@ -28,10 +28,13 @@
 <body>
     <header>
         <img src="sb_logo.png" alt="The Spice Bowl" />
+        <!-- Begin Login Form -->
         <form id="login" action="http://www.example.com/sb/login" method="POST">
             <input type="text" id="userBox" placeholder="username" />
             <input type="text" id="pwdBox" placeholder="password" />
         </form>
+        <!-- End Login Form -->
+        <!-- The above piece of code allows you to log into your Spice Bowl account. -->
 
         <nav> <a id="navicon" href="#"><img src="sb_navicon.png" alt="" /></a>
             <ul>
@@ -45,6 +48,7 @@
     </header>
 
     <section>
+        <!-- Begin Form -->
         <h1>Payment Form</h1>
         <form id="payment" action="http://www.example.com/sb/payment" method="POST">
             <fieldset id="billing">
@@ -57,8 +61,133 @@
                 <input type="text" name="street" id="streetBox" required />
                 <label for="streetBox2">Street Address (2)</label>
                 <input type="text" name="street2" id="streetBox2" />
+                <label for="cityBox">City</label>
+                <input type="text" name="city" id="cityBox" required />
+                <label for="stateBox">State</label>
+                <input type="text" name="state" id="stateBox" list="stateList" required />
+                <datalist id="stateList">
+                    <option value="AL">(Alabama)</option>
+                    <option value="AK">(Alaska)</option>
+                    <option value="AZ">(Arizona)</option>
+                    <option value="AR">(Arkansas)</option>
+                    <option value="CA">(California)</option>
+                    <option value="CO">(Colorado)</option>
+                    <option value="CT">(Connecticut)</option>
+                    <option value="DE">(Delaware)</option>
+                    <option value="FL">(Florida)</option>
+                    <option value="GA">(Georgia)</option>
+                    <option value="HI">(Hawaii)</option>
+                    <option value="ID">(Idaho)</option>
+                    <option value="IL">(Illinois)</option>
+                    <option value="IN">(Indiana)</option>
+                    <option value="IA">(Iowa)</option>
+                    <option value="KS">(Kansas)</option>
+                    <option value="KY">(Kentucky)</option>
+                    <option value="LA">(Louisiana)</option>
+                    <option value="ME">(Maine)</option>
+                    <option value="MD">(Maryland)</option>
+                    <option value="MA">(Massachusetts)</option>
+                    <option value="MI">(Michigan)</option>
+                    <option value="MN">(Minnesota)</option>
+                    <option value="MS">(Mississippi)</option>
+                    <option value="MO">(Missouri)</option>
+                    <option value="MT">(Montana)</option>
+                    <option value="NE">(Nebraska)</option>
+                    <option value="NV">(Nevada)</option>
+                    <option value="NH">(New Hampshire)</option>
+                    <option value="NJ">(New Jersey)</option>
+                    <option value="NM">(New Mexico)</option>
+                    <option value="NY">(New York)</option>
+                    <option value="NC">(North Carolina)</option>
+                    <option value="ND">(North Dakota)</option>
+                    <option value="OH">(Ohio)</option>
+                    <option value="OK">(Oklahoma)</option>
+                    <option value="OR">(Oregon)</option>
+                    <option value="PA">(Pennsylvania)</option>
+                    <option value="RI">(Rhode Island)</option>
+                    <option value="SC">(South Carolina)</option>
+                    <option value="SD">(South Dakota)</option>
+                    <option value="TN">(Tennessee)</option>
+                    <option value="TX">(Texas)</option>
+                    <option value="UT">(Utah)</option>
+                    <option value="VT">(Vermont)</option>
+                    <option value="VA">(Virginia)</option>
+                    <option value="WA">(Washington)</option>
+                    <option value="WV">(West Virginia)</option>
+                    <option value="WI">(Wisconsin)</option>
+                    <option value="WY">(Wyoming)</option>
+                </datalist>
+                <label for="zipBox">ZIP/Postal Code</label>
+                <input type="text" name="zip" id="zipBox" pattern="^\d{5}(-\d{4})?$" />
+                <label for="countryBox">Country</label>
+                <input type="text" name="country" id="countryBox" value="United States (US)" required />
+                <label for="phoneBox">Phone</label>
+                <input type="tel" name="phone" id="phoneBox" pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$"
+                    required />
             </fieldset>
+            <fieldset id="creditCard">
+                <legend>Credit Card (required)</legend>
+                <fieldset>
+                    <label for="cCard" class="cardLabel">
+                        <input type="radio" name="cCard" id="cCard" value="amex" required />
+                        <img src="sb_amex.png" alt="">
+                    </label>
+                    <label for="cCard" class="cardLabel">
+                        <input type="radio" name="cCard" id="cCard" value="discover" required />
+                        <img src="sb_discover.png" alt="">
+                    </label>
+                    <label for="cCard" class="cardLabel">
+                        <input type="radio" name="cCard" id="cCard" value="master" required />
+                        <img src="sb_master.png" alt="">
+                    </label>
+                    <label for="cCard" class="cardLabel">
+                        <input type="radio" name="cCard" id="cCard" value="visa" required />
+                        <img src="sb_visa.png" alt="">
+                    </label>
+                </fieldset>
+            </fieldset>
+            <button type="submit">
+                <img src="sb_button.png" alt="next">
+            </button>
+            <label for="cardBox">Credit Card Number</label>
+            <input type="text" name="cardNumber" id="cardBox" pattern="^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$"
+                required />
+            <label for="monthList">Expiration Date</label>
+            <select name="cardMonth" id="monthList" required>
+                <option value="">--Month--</option>
+                <option value="1">January (01)</option>
+                <option value="2">February (02)</option>
+                <option value="3">March (03)</option>
+                <option value="4">April (04)</option>
+                <option value="5">May (05)</option>
+                <option value="6">June (06)</option>
+                <option value="7">July (07)</option>
+                <option value="8">August (08)</option>
+                <option value="9">September (09)</option>
+                <option value="10">October (10)</option>
+                <option value="11">November (11)</option>
+                <option value="12">December (12)</option>
+            </select>
+            <select name="cardYear" id="yearList" required>
+                <option value="">--Year--</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+                <option value="2026">2026</option>
+                <option value="2027">2027</option>
+                <option value="2028">2028</option>
+            </select>
+            <label for="cscBox">CSC</label>
+            <input type="text" name="csc" id="cscBox" pattern="^\d{3}$" maxlength="3" placeholder="nnn" required />
         </form>
+        <!-- End Form -->
+        <!-- The above piece of code adds a web form in which you can submit your ZIP code, country, state, city, first and last names, phone number, credit card information--which you can submit with an added button. -->
         <aside>
             <h1>Menu Ideas</h1>
             <h2>Salt-Roasted Pecans</h2>
